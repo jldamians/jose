@@ -65,9 +65,7 @@ Legend:
 | RSAES OAEP | ✓ | RSA-OAEP, RSA-OAEP-256 |
 | RSAES-PKCS1-v1_5 | ✓ | RSA1_5 |
 | PBES2 | ✓ | PBES2-HS256+A128KW, PBES2-HS384+A192KW, PBES2-HS512+A256KW |
-| ECDH-ES (for all EC keys) | ✓ | ECDH-ES, ECDH-ES+A128KW, ECDH-ES+A192KW, ECDH-ES+A256KW |
-| ECDH-ES (for OKP X25519) | ✓ via [plugin][plugin-x25519] | ECDH-ES, ECDH-ES+A128KW, ECDH-ES+A192KW, ECDH-ES+A256KW |
-| ECDH-ES (for OKP X448) | ✕ ||
+| ECDH-ES | ✓ | ECDH-ES, ECDH-ES+A128KW, ECDH-ES+A192KW, ECDH-ES+A256KW |
 | (X)ChaCha | ✓ via [plugin][plugin-chacha] | C20PKW, X20CPKW, ECDH-ES+C20PKW, ECDH-ES+XC20PKW |
 
 | JWE Content Encryption Algorithms | Supported ||
@@ -87,12 +85,10 @@ Notes
 - RSA-OAEP-256 JWE algorithm is only supported when Node.js >= 12.9.0 runtime is detected
 - Importing X.509 certificates and handling `x5c` is only supported when Node.js >= 12.0.0 runtime is detected
 - OKP keys are only supported when Node.js >= 12.0.0 runtime is detected
+- ECDH-ES with OKP keys is only supported when Node.js >= 13.x.x runtime is detected
 - See [#electron-support](#electron-support) for electron exceptions
 
 ---
-
-Pending Node.js Support 🤞:
-- ECDH-ES with X25519 and X448 - see [nodejs/node#26626](https://github.com/nodejs/node/pull/26626)
 
 Won't implement:
 - ✕ JWS embedded key / referenced verification
